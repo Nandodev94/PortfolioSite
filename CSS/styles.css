@@ -1,0 +1,281 @@
+/* Global reset & layout sanity */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: var(--bg-main);
+    color: var(--text-main);
+    text-align: center;
+    font-family: 'Merriweather', serif;
+}
+
+:root {
+    /* Light mode */
+    --bg-main: #ffffff;
+    --bg-section: #f5f7f7;
+    --bg-footer: #66BFBF;
+    --text-main: #40514E;
+    --text-muted: #6c7a7a;
+    --accent-primary: #66BFBF;
+    --accent-secondary: #11999E;
+}
+
+body.dark-mode {
+    /* Dark mode */
+    --bg-main: #0B1F22;
+    --bg-section: #103A3D;
+    --bg-footer: #022326;
+    --text-main: #D6E6E6;
+    --text-muted: #9FB8B8;
+    --accent-primary: #66BFBF;
+    --accent-secondary: #11999E;
+}
+
+.navbar {
+    background-color: var(--bg-footer) !important;
+    padding: 10px 20px;
+}
+
+.nav-link,
+.navbar-brand {
+    color: var(--text-main) !important;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 10px;
+}
+
+#themeToggle {
+    background-color: var(--bg-footer) !important;
+    border: none;
+    /* color: var(--text-main); */
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+
+/* Headings */
+
+h1 {
+    color: #66BFBF;
+    font-size: 5.625rem;
+    margin: 0 auto 10px auto;
+    font-family: 'TMo', cursive;
+}
+
+h2 {
+    color: #66BFBF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: normal;
+}
+
+h3 {
+    color: #11999E;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2 {
+    color: var(--accent-primary);
+}
+
+h3,
+a {
+    color: var(--accent-secondary);
+}
+
+
+/* Links */
+
+a {
+    color: #11999E;
+    margin: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #EAF6F6;
+}
+
+
+/* Text */
+
+p {
+    line-height: 2;
+}
+
+
+/* Divider */
+
+hr {
+    border: dotted #EAF6F6 6px;
+    border-bottom: none;
+    width: 5%;
+    margin: 100px auto;
+}
+
+
+/* HERO / LANDING */
+
+.top-container {
+    background: url('../images/LandingPicture.png') center / cover no-repeat;
+    position: relative;
+    width: 100vw;
+    height: 80vh;
+    min-height: 500px;
+}
+
+.top-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+    z-index: 1;
+}
+
+.hero-text h1 {
+    letter-spacing: 2px;
+}
+
+.hero-text h2 {
+    opacity: 0.9;
+}
+
+
+/* Profile Image */
+
+.image-Profile {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 20px;
+    border: 4px solid rgba(255, 255, 255, 0.6);
+}
+
+
+/* Middle Section */
+
+.middle-container {
+    margin: 0px 0;
+    padding: 50px 0;
+    background: var(--bg-section);
+}
+
+.intro {
+    max-width: 700px;
+    width: 90%;
+    margin: auto;
+}
+
+
+/* Skills */
+
+.skill-row {
+    width: 50%;
+    margin: 100px auto;
+    text-align: left;
+    line-height: 2;
+}
+
+.image-Skills-technical-support {
+    float: left;
+    margin: 0 30px 20px 0;
+    width: 25%;
+}
+
+.image-Skills-saxophone {
+    float: right;
+    margin: 0 0 20px 30px;
+    width: 25%;
+}
+
+.technical-support-description,
+.sax-description {
+    clear: both;
+}
+
+
+/* Contact */
+
+.contact-me {
+    width: 40%;
+    margin: 40px auto 60px;
+}
+
+
+/* Footer */
+
+.bottom-container {
+    background: var(--bg-footer);
+    background-color: #022326;
+    padding: 50px 0 20px;
+}
+
+.copyright {
+    color: #EAF6F6;
+    font-size: 0.75rem;
+    padding: 20px 0;
+}
+
+
+/* Buttons */
+
+.btn {
+    background: linear-gradient(to bottom, #11CDD4, #11999E);
+    border-radius: 8px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: linear-gradient(to bottom, #30E3CB, #2BC4AD);
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 1.75rem;
+    }
+    .skill-row {
+        width: 90%;
+        text-align: center;
+    }
+    .image-Skills-technical-support,
+    .image-Skills-saxophone {
+        float: none;
+        display: block;
+        margin: 0 auto 20px auto;
+        width: 150px;
+    }
+    .contact-me {
+        width: 90%;
+    }
+}
