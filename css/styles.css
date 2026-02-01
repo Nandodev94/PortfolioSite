@@ -69,10 +69,10 @@ body.dark-mode {
 /* Headings */
 
 h1 {
-    color: #66BFBF;
+    color: var(--accent-primary);
     font-size: 5.625rem;
     margin: 0 auto 10px auto;
-    font-family: 'TMo', cursive;
+    font-family: 'Montserrat', sans-serif;
 }
 
 h2 {
@@ -217,7 +217,7 @@ hr {
 }
 
 .technical-support-description,
-.sax-description {
+.dev-description {
     clear: both;
 }
 
