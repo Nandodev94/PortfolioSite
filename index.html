@@ -18,6 +18,15 @@
 
     <!-- Your Styles -->
     <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Dark/LightMode Config -->
+    <script>
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+            document.documentElement.classList.add("dark-mode");
+        }
+    </script>
+
 </head>
 
 <body>
@@ -30,15 +39,16 @@
             <a class="navbar-brand" href="#">NK Systems</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="#">Services</a>
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    <a class="nav-link" href="Services.html">Services</a>
                     <a class="nav-link" href="#">Projects</a>
+                    <a class="nav-link" href="https://pr.tn/ref/S0SYM2ET">Got VPN?</a>
                     <button id="themeToggle">☀️/🌙</button>
 
                 </div>
@@ -65,9 +75,9 @@
                 <h2>Hello.</h2>
                 <p class="intro">
                     I’m Fernando Adam, a systems-focused technologist with a strong interest in building reliable infrastructure and modern web solutions for real-world problems.
-                    <br>    
+                    <br>
                     I’m passionate about helping people and small teams simplify their technology—whether that means improving workflows, supporting systems that people depend on, or building clean, functional websites that don’t get in the way of the user.
-                    <br>    
+                    <br>
                     My long-term goal is to grow this work into a small, focused operation that blends IT support, automation, and web development into practical, approachable solutions for businesses that don’t want enterprise complexity but still care about doing things right.
                 </p>
             </div>
@@ -96,7 +106,8 @@
                     <p class="sax-description">
                         I enjoy building clean, straightforward web experiences that focus on usability and clarity. I’m particularly interested in creating simple landing pages, small business sites, and internal tools that reduce friction instead of adding complexity.
                         <br>
-                        Over time, I aim to expand this into lightweight automation and integration work—helping teams reduce repetitive tasks and make better use of the tools they already have.                    </p>
+                        Over time, I aim to expand this into lightweight automation and integration work—helping teams reduce repetitive tasks and make better use of the tools they already have.
+                    </p>
                     <p class="sax-description">
                         Someday I hope to play both the saxophone and piano again and continue perfecting my musical talents.
                     </p>
@@ -107,8 +118,6 @@
 
     <!-- CONTACT -->
     <section class="bottom-section">
-        <hr />
-
         <div class="contact-me">
             <h2>Get In Touch</h2>
             <h3>Let’s work together.</h3>
@@ -133,9 +142,20 @@
 
     <!-- Dark Mode Toggle -->
     <script>
-        const btn = document.getElementById("themeToggle");
-        btn.addEventListener("click", () => {
+        const toggleBtn = document.getElementById("themeToggle");
+
+        // Load saved theme on page load
+        // const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+            document.body.classList.add("dark-mode");
+        }
+
+        // Toggle theme + save preference
+        toggleBtn.addEventListener("click", () => {
             document.body.classList.toggle("dark-mode");
+
+            const isDark = document.body.classList.contains("dark-mode");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
         });
     </script>
 </body>

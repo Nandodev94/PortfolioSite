@@ -46,6 +46,7 @@ body.dark-mode {
 .nav-link,
 .navbar-brand {
     color: var(--text-main) !important;
+    font-size: large;
     font-family: 'Montserrat', sans-serif;
     margin: 0 10px;
 }
@@ -261,13 +262,16 @@ hr {
     h1 {
         font-size: 3rem;
     }
+
     h2 {
         font-size: 1.75rem;
     }
+
     .skill-row {
         width: 90%;
         text-align: center;
     }
+
     .image-Skills-technical-support,
     .image-Skills-saxophone {
         float: none;
@@ -275,7 +279,47 @@ hr {
         margin: 0 auto 20px auto;
         width: 150px;
     }
+
     .contact-me {
         width: 90%;
     }
+}
+
+/* Services Page */
+
+.services-section {
+    padding: 50px 0;
+    background: var(--bg-section);
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    background: var(--bg-main);
+    /* border: 1px solid var(--text-muted); */
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-item img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.service-item h5 {
+    color: var(--accent-primary);
+    margin-bottom: 10px;
+}
+
+.card-text,
+.card-title {
+    color: var(--text-main);
 }
