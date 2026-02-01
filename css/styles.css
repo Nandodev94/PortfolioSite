@@ -51,6 +51,12 @@ body.dark-mode {
     margin: 0 10px;
 }
 
+.navbar-toggler,
+.navbar-toggler-icon {
+    color: var(--accent-primary) !important;
+    background-color: var(--accent-primary) !important;
+}
+
 #themeToggle {
     background-color: var(--bg-footer) !important;
     border: none;
